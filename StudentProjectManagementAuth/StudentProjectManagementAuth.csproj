@@ -186,6 +186,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
+    <Compile Include="Areas\Administrator\Controllers\ManageRoleController.cs" />
+    <Compile Include="Areas\Administrator\Controllers\ManageUserController.cs" />
+    <Compile Include="Areas\Professor\ProfessorAreaRegistration.cs" />
+    <Compile Include="Areas\Student\StudentAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -227,6 +232,16 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Areas\Administrator\Views\web.config" />
+    <Content Include="Areas\Professor\Views\web.config" />
+    <Content Include="Areas\Student\Views\web.config" />
+    <Content Include="Areas\Administrator\Views\ManageRole\Index.cshtml" />
+    <Content Include="Areas\Administrator\Views\ManageRole\Create.cshtml" />
+    <Content Include="Areas\Administrator\Views\ManageRole\Delete.cshtml" />
+    <Content Include="Areas\Administrator\Views\ManageUser\Index.cshtml" />
+    <Content Include="Areas\Administrator\Views\ManageUser\Edit.cshtml" />
+    <Content Include="Areas\Administrator\Views\ManageUser\EditRole.cshtml" />
+    <Content Include="Areas\Administrator\Views\ManageUser\Delete.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -284,6 +299,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administrator\Models\" />
+    <Folder Include="Areas\Administrator\Views\Shared\" />
+    <Folder Include="Areas\Professor\Controllers\" />
+    <Folder Include="Areas\Professor\Models\" />
+    <Folder Include="Areas\Professor\Views\Shared\" />
+    <Folder Include="Areas\Student\Controllers\" />
+    <Folder Include="Areas\Student\Models\" />
+    <Folder Include="Areas\Student\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
