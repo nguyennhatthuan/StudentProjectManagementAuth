@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace StudentProjectManagementAuth.Models
@@ -79,6 +80,18 @@ namespace StudentProjectManagementAuth.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "Display Name")]
+        public string DisplayName { get; set; }
+
+        [DataType(DataType.Date)]
+        [Display(Name = "Birth Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}",
+               ApplyFormatInEditMode = true)]
+        public DateTime BirthDate { get; set; }
+
+        [Display(Name = "Organization")]
+        public string Organization { get; set; }
     }
 
     public class ResetPasswordViewModel
