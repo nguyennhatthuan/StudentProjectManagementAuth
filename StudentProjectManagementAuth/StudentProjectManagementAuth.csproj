@@ -194,21 +194,23 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Definitions\Implements\BaseEntity.cs" />
+    <Compile Include="Definitions\Implements\Repository.cs" />
+    <Compile Include="Definitions\Interfaces\IRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704061528418_InitialCreate.cs" />
-    <Compile Include="Migrations\201704061528418_InitialCreate.Designer.cs">
-      <DependentUpon>201704061528418_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704061544087_updateUser.cs" />
-    <Compile Include="Migrations\201704061544087_updateUser.Designer.cs">
-      <DependentUpon>201704061544087_updateUser.cs</DependentUpon>
+    <Compile Include="Migrations\201704091049046_InitDbContext.cs" />
+    <Compile Include="Migrations\201704091049046_InitDbContext.Designer.cs">
+      <DependentUpon>201704091049046_InitDbContext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ProjectModels\Group.cs" />
+    <Compile Include="Models\ProjectModels\Organization.cs" />
+    <Compile Include="Models\ProjectModels\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -312,11 +314,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704061528418_InitialCreate.resx">
-      <DependentUpon>201704061528418_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704061544087_updateUser.resx">
-      <DependentUpon>201704061544087_updateUser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704091049046_InitDbContext.resx">
+      <DependentUpon>201704091049046_InitDbContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

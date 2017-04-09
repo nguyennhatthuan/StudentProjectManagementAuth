@@ -7,13 +7,13 @@ namespace StudentProjectManagementAuth.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class updateUser : IMigrationMetadata
+    public sealed partial class InitDbContext : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updateUser));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitDbContext));
         
         string IMigrationMetadata.Id
         {
-            get { return "201704061544087_updateUser"; }
+            get { return "201704091049046_InitDbContext"; }
         }
         
         string IMigrationMetadata.Source

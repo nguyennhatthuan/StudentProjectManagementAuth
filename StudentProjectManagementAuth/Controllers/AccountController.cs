@@ -157,7 +157,6 @@ namespace StudentProjectManagementAuth.Controllers
                     Email = model.Email,
                     DisplayName = model.DisplayName,
                     BirthDate = model.BirthDate,
-                    Organization = model.Organization
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

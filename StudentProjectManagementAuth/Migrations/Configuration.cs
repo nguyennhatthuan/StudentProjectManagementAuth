@@ -10,7 +10,6 @@ namespace StudentProjectManagementAuth.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "StudentProjectManagementAuth.Models.ApplicationDbContext";
         }
 
         protected override void Seed(StudentProjectManagementAuth.Models.ApplicationDbContext context)

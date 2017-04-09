@@ -1,20 +1,22 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
-using StudentProjectManagementAuth.Models;
+using StudentProjectManagementAuth.Definitions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace StudentProjectManagementAuth.Areas.Administrator.Controllers
 {
     public class ManageRoleController : Controller
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        private Repository<IdentityRole> _roleDb;  
+        public ManageRoleController()
+        {
+            _roleDb = new Repository<IdentityRole>();
+        }
+
         // GET: Administrator/ManageRole
         public ActionResult Index()
         {
-            var model = db.Roles.AsEnumerable();
+            var model = _roleDb.SelectAll();
             return View(model);
         }
 
@@ -31,8 +33,8 @@ namespace StudentProjectManagementAuth.Areas.Administrator.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    db.Roles.Add(role);
-                    db.SaveChanges();
+                    _roleDb.Add(role);
+                    _roleDb.Save();
                 }
                 return RedirectToAction("Index");
             }
@@ -43,23 +45,23 @@ namespace StudentProjectManagementAuth.Areas.Administrator.Controllers
             return View(role);
         }
 
-        public ActionResult Delete(string Id)
+        public ActionResult Delete(string id)
         {
-            var model = db.Roles.Find(Id);
+            var model = _roleDb.SelectById(id);
             return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Delete")]
-        public ActionResult DeleteConfirmed(string Id)
+        public ActionResult DeleteConfirmed(string id)
         {
             IdentityRole model = null;
             try
             {
-                model = db.Roles.Find(Id);
-                db.Roles.Remove(model);
-                db.SaveChanges();
+                model = _roleDb.SelectById(id);
+                _roleDb.Delete(model);
+                _roleDb.Save();
                 return RedirectToAction("Index");
             }
             catch (Exception ex)

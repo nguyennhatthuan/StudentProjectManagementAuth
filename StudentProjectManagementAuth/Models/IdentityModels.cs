@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StudentProjectManagementAuth.Models
 {
@@ -10,8 +12,17 @@ namespace StudentProjectManagementAuth.Models
     public class ApplicationUser : IdentityUser
     {
         public string DisplayName { get; set; }
+        public string FullName { get; set; }
         public DateTime BirthDate { get; set; }
-        public string Organization { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public DateTime? ModifiedDate { get; set; }
+        public string CreatedBy { get; set; }
+        public string ModifiedBy { get; set; }
+        public bool Status { get; set; } = true;
+        public string OrganizationId { get; set; }
+
+        [ForeignKey("OrganizationId")]
+        public virtual Organization Organization { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -29,9 +40,20 @@ namespace StudentProjectManagementAuth.Models
         {
         }
 
+        public virtual DbSet<Organization> Organizations { get; set; }
+        public virtual DbSet<Group> Groups { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            
+        }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
     }
 }
