@@ -1,0 +1,108 @@
+/*General*/
+.border-red {border-color: red !important;}
+.border-bottom {border-bottom: 2px solid #f5f5f5}
+
+
+
+.color-white {color: #FFFFFF !important;}
+.color-success {color: #1ABB9C !important}
+
+.btn-w-sm {min-width: 100px !important}
+
+.text-color-#1ABB9C {color: #1ABB9C !important;}
+
+.mtb-10 {margin: 10px 0}
+
+.mt0 {margin-top: 0px !important;}
+.mt10 {margin-top: 10px !important;}
+
+.mb0 {margin-bottom: 0 !important;}
+.mb10 {margin-bottom: 10px !important;}
+.mb15 {margin-bottom: 15px !important;}
+.mb20 {margin-bottom: 20px !important;}
+
+.ml0 {margin-left: 0px !important;}
+
+.mr0 {margin-right:0px !important;}
+
+.pl0 {padding-left: 0px !important;}
+.pt0 {padding-top: 0px !important;}
+
+.mheight300 {min-height: 300px !important;}
+.mheight700 {min-height: 700px !important;}
+
+.mwidth60 {max-width: 60% !important}
+
+.text-underline {text-decoration: underline !important}
+
+.pointer {cursor: pointer !important}
+
+.IsLoading {text-align: center; color:#1ABB9C !important}
+
+.form-label-ltr .control-label {text-align: left !important}
+.form-label-ltr .glyphicon {padding-right: 5px !important; color: #1ABB9C !important;}
+.form-label-ltr .form-group input { border-radius: 5px !important;}
+.form-label-ltr .form-group input:hover { border-color: #1ABB9C!important;}
+.form-label-ltr .form-group input:focus { border-color: #1ABB9C!important;}
+
+.ip-type-text {}
+
+/*-----------Layout Professor-----------*/
+/*Create Professor*/
+
+.create-professor .form-group .control-label {
+    color: #73879C !important;
+    font-weight: bold!important;
+    padding-left: 0 !important;
+}
+
+.create-professor .form-group input {
+    border-radius: 5px !important;
+}
+
+.create-professor .form-group input:hover {
+    border-color: #1ABB9C!important;
+}
+
+.create-professor .form-group input:focus {
+    border-color: #1ABB9C!important;
+}
+
+
+.dropdown > ul >li :hover {
+    background-color: #1ABB9C !important;
+    color: #FFFFFF !important;
+}
+
+/*Create Professor*/
+
+/*-----------Layout Professor-----------*/
+
+.dropdown-usermenu > li :hover {
+    background-color: #1ABB9C !important;
+    color: #FFFFFF !important;
+    font-weight: 500;
+}
+
+/*Profile*/
+.profile-image {
+    float: left;
+    width: 100%;
+}
+
+.image-profile {
+    padding-top: calc(100% - 2px);
+    border-radius: 4px;
+    border: 1px solid grey;
+}
+
+.btn-file-profile { 
+    opacity: 0; 
+    display: block; 
+    position: absolute; 
+    left: -10%;
+    top: calc(50% - 50px);
+
+}
+
+/*Profile*/
