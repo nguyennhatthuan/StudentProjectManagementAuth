@@ -1,0 +1,132 @@
+﻿<div class="right_col" role="main" ng-controller="ProfessorManagementCtrl">
+    <div class="col-sm-6 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2 style="font-weight:bold">Create Professor</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li class="pull-right">
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div id="datatable-responsive_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div class="row">
+                        <div class="col-xs-12 mheight300">
+                            <div class="form-horizontal create-professor">
+                                <div class="row">
+                                    <div class="form-group col-xs-12" ng-class="{'mb15': Professor.ValidationList.UserName == null}">
+                                        <label class="control-label col-lg-4 col-md-5 col-sm-5 col-xs-12">UserName <strong style="color: red">*</strong></label>
+                                        <div class="col-lg-6 col-md-7 col-sm-7 col-xs-12" style="padding-left: 0 !important">
+                                            <input type="text" class="form-control" placeholder="User Name" style="width:100% !important;" tabindex="1" ng-model="Professor.Model.UserName" ng-class="{'border-red': Professor.ValidationList.UserName != null }" />
+                                            <p class="text-danger" ng-show="Professor.ValidationList.UserName != null">{{Professor.ValidationList.UserName[0]}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-xs-12" ng-class="{'mb15': Professor.ValidationList.Password == null}">
+                                        <label class="control-label col-lg-4 col-md-5 col-sm-5 col-xs-12">Password <strong style="color: red">*</strong></label>
+                                        <div class="col-lg-6 col-md-7 col-sm-7 col-xs-12" style="padding-left: 0 !important">
+                                            <input type="password" class="form-control" placeholder="Password" style="width:100% !important" tabindex="2" ng-model="Professor.Model.Password" ng-class="{'border-red': Professor.ValidationList.Password != null }" />
+                                            <p class="text-danger" ng-show="Professor.ValidationList.Password != null">{{Professor.ValidationList.Password[0]}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-xs-12" ng-class="{'mb15': Professor.ValidationList.ConfirmPassword == null}">
+                                        <label class="control-label col-lg-4 col-md-5 col-sm-5 col-xs-12">ConfirmPassword <strong style="color: red">*</strong></label>
+                                        <div class="col-lg-6 col-md-7 col-sm-7 col-xs-12" style="padding-left: 0 !important">
+                                            <input type="password" class="form-control" placeholder="Confirm Password" style="width:100% !important" tabindex="3" ng-model="Professor.Model.ConfirmPassword" ng-class="{'border-red': Professor.ValidationList.ConfirmPassword != null }" />
+                                            <p class="text-danger" ng-show="Professor.ValidationList.ConfirmPassword != null">{{Professor.ValidationList.ConfirmPassword[0]}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-xs-12" style="margin-bottom: 10px !important">
+                                        <div class="col-lg-5 col-sm-7 col-lg-offset-4 col-sm-offset-5 col-xs-12" style="padding-left: 0 !important">
+                                            <button type="submit" class="btn btn-success" tabindex="4" ng-click="createProfessor()">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2 style="font-weight:bold">Professors</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li class="pull-right">
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div id="datatable-responsive_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div class="row">
+                        <div class="col-xs-12 mheight700">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>User Name</th>
+                                        <th>Full Name</th>
+                                        <th>Phone</th>
+                                        <th class="text-right"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in Professor.List">
+                                        <td>{{item.Id}}</td>
+                                        <td class="text-primary">{{item.UserName}}</td>
+                                        <td>{{item.FullName}}</td>
+                                        <td>{{item.Phone}}</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="fa fa-cog fa-2x fa-150p"></i>
+                                                </a>
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li ng-click="showPopupViewProfessor(item)"><a href="javascript:;">View Detailt</a></li>
+                                                    <li ng-click="showPopupDeleteProfessor($index, item)"><a href="javascript:;">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p class="IsLoading" ng-show="Professor.IsLoading"><i class="fa fa-spinner fa-pulse"></i></p>
+                            <p class="text-center" ng-show="Professor.IsLoading == false && Professor.NoResult && Professor.TotalCount == 0">No Result</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/dataTables.buttons.min.js"></script>
+<script src="~/Scripts/buttons.bootstrap.min.js"></script>
+<script src="~/Scripts/buttons.flash.min.js"></script>
+<script src="~/Scripts/buttons.html5.min.js"></script>
+<script src="~/Scripts/buttons.print.min.js"></script>
+<script src="~/Scripts/dataTables.fixedHeader.min.js"></script>
+<script src="~/Scripts/dataTables.keyTable.min.js"></script>
+<script src="~/Scripts/dataTables.responsive.min.js"></script>
+<script src="~/Scripts/responsive.bootstrap.js"></script>
+<script src="~/Scripts/dataTables.scroller.min.js"></script>
+<script src="~/Scripts/jszip.min.js"></script>
+<script src="~/Scripts/pdfmake.min.js"></script>
+<script src="~/Scripts/vfs_fonts.js"></script>
+
+<script src="~/Scripts/app_sysadmin/Controllers/ProfessorManagementCtrl.js"></script>

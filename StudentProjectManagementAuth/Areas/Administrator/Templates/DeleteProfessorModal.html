@@ -1,0 +1,25 @@
+﻿﻿<div class="modal-header">
+    <h3 class="modal-title">Delete Professor</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-3">Id</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-disabled="true" ng-model="Professor.Id" />
+                </div>
+            </div>
+            <div class="form-group mb0">
+                <label class="control-label col-sm-3">UserName</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-disabled="true" ng-model="Professor.UserName" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success btn-sm btn-w-sm" ng-click="deleteProfessor()" ng-disabled="IsSubmitting">Delete</button>
+    <button class="btn btn-default btn-sm btn-w-sm mr0" ng-click="cancel()" ng-disabled="IsSubmitting">Cancel</button>
+</div>
