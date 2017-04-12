@@ -17,7 +17,7 @@ namespace StudentProjectManagementAuth.Areas.Administrator
             context.MapRoute(
                 name : "Administrator",
                 url: "Administrator/{*.}",
-                defaults: new { controller = "Administrator", action = "Index"}
+                defaults: new {area = "Administrator", controller = "Admin", action = "Index"}
             );
         }
     }

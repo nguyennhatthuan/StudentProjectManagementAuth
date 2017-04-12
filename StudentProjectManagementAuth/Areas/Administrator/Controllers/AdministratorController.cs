@@ -14,13 +14,14 @@ namespace StudentProjectManagementAuth.Areas.Administrator.Controllers
         {
             return View();
         }
-        [HttpGet]
+
         public ActionResult Dashboard()
         {
             return View();
         }
 
         #region Management Professor
+        [HttpGet]
         public ActionResult ProfessorManagement()
         {
             return View();

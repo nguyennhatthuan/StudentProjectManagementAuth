@@ -26,6 +26,12 @@ namespace StudentProjectManagementAuth
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            //AngularJs
+            bundles.Add(new ScriptBundle("~/bundles/app_sysadmin").Include(
+                        "~/Scripts/app_sysadmin/app.js",
+                        "~/Scripts/app_sysadmin/ProfessorManagementCtrl.js"
+                        ));
         }
     }
 }

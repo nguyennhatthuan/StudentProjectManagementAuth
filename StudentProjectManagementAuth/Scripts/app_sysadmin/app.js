@@ -7,22 +7,23 @@ app.config(['$routeProvider', '$locationProvider',
 
 		$routeProvider
 		.when ('/Dashboard', {
-			templateUrl: '/Areas/Administrator/Administrator/Dashboard'
+			templateUrl: '/Administrator/Dashboard'
 		})
 
-		.when ('/Test', {
+		.when ('/TestThanh', {
 			template: '<h2 style="color: #FFFFFF">Test thanh</h2>'
 		})
 
-		.when ('/ProfessorManagement', {
-			templateUrl: '/Areas/Administrator/Administrator/ProfessorManagement',
-			controller: 'ProfessorManagementCtrl'
+		.when ('/TestCong', {
+			template: '<h2 style="color: #FFFFFF">Test tinh yeu</h2>'
 		})
 
-		//.otherwise({ redirectTo: '/Dashboard' });
+		.when ('/ProfessorManagement', {
+			template: '<h2 style="color: #FFFFFF">Test tinh yeu</h2>'
+		})
 
-		//$locationProvider.html5Mode(true);
+		.otherwise({ redirectTo: '/Dashboard' });
 
 	}
 
-])
+]);
