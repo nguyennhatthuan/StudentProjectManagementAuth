@@ -43,6 +43,9 @@ namespace StudentProjectManagementAuth.Models
         public virtual DbSet<Organization> Organizations { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
         public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<Status> Statuses { get; set; }
+        public virtual DbSet<Project> Projects { get; set; }
+        public virtual DbSet<ProjectDetails> ProjectDetails { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

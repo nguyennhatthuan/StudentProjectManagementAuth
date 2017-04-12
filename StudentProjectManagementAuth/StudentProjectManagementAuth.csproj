@@ -207,12 +207,23 @@
     <Compile Include="Migrations\201704091049046_InitDbContext.Designer.cs">
       <DependentUpon>201704091049046_InitDbContext.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704111507115_UpdateDatabase.cs" />
+    <Compile Include="Migrations\201704111507115_UpdateDatabase.Designer.cs">
+      <DependentUpon>201704111507115_UpdateDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704111513589_UpdateModels.cs" />
+    <Compile Include="Migrations\201704111513589_UpdateModels.Designer.cs">
+      <DependentUpon>201704111513589_UpdateModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProjectModels\Group.cs" />
     <Compile Include="Models\ProjectModels\Organization.cs" />
+    <Compile Include="Models\ProjectModels\Project.cs" />
+    <Compile Include="Models\ProjectModels\ProjectDetails.cs" />
+    <Compile Include="Models\ProjectModels\Status.cs" />
     <Compile Include="Models\ProjectModels\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -375,6 +386,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201704091049046_InitDbContext.resx">
       <DependentUpon>201704091049046_InitDbContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704111507115_UpdateDatabase.resx">
+      <DependentUpon>201704111507115_UpdateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704111513589_UpdateModels.resx">
+      <DependentUpon>201704111513589_UpdateModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
